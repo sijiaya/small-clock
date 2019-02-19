@@ -1,5 +1,7 @@
 package com.soft1841.chapter1;
 
+//声明double型变量height记录身高，声明int型变量weight记录体重
+
 public class BMIexponent {
     public static void main(String[] args) {
         //身高变量
