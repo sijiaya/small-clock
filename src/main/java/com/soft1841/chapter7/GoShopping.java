@@ -1,8 +1,8 @@
 package com.soft1841.chapter7;
 
 /**
- * 子类，继承自Market抽象类，实现其中的shop()抽象方法
- * 具体什么商场,买什么东西
+ * 在该类中使用WallMarket类和TaobaoMarket类创建抽象类对象，并分别给抽象类中的成员变量赋不同的值
+ * 调用shop()方法分别输出结果
  * @author sijia
  * 2019.3.10
  */
