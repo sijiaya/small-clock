@@ -2,7 +2,9 @@ package com.soft1841.chapter1;
 
 import java.util.Scanner;
 
-//让用户输入两个数字，分别用5种运算符对这两个数字进行计算
+/**
+ * 让用户输入两个数字，分别用5种运算符对这两个数字进行计算
+ */
 
 public class ArithmeticOperator {
     public static void main(String[] args) {

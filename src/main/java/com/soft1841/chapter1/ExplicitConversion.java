@@ -1,7 +1,10 @@
 package com.soft1841.chapter1;
 
-//显示转换（强制转换）    (类型名)要转换的值
-//利用显示转换实现精度丢失(将不同类型的变量转换成精度更低的类型，输出转换之后发生精度丢失的结果)
+/**
+ * 显示转换（强制转换）    (类型名)要转换的值
+ * 利用显示转换实现精度丢失(将不同类型的变量转换成精度更低的类型，输出转换之后发生精度丢失的结果)
+ */
+
 public class ExplicitConversion {
     public static void main(String[] args) {
         //double类型强制转换成int类型

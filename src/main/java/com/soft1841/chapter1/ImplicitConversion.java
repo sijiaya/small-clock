@@ -1,8 +1,11 @@
 package com.soft1841.chapter1;
 
 
-//隐式转换      自动提升双精度
-//让低精度的变量与高精度变量同时做计算，查看结果属于哪种精度
+/**
+ * 隐式转换      自动提升双精度
+ * 让低精度的变量与高精度变量同时做计算，查看结果属于哪种精度
+ */
+
 public class ImplicitConversion {
     public static void main(String[] args) {
         //声明byte型变量mybyte，并把byte型变量允许的最大值赋给mybyte

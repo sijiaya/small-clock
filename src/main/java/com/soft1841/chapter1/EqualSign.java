@@ -1,6 +1,8 @@
 package com.soft1841.chapter1;
 
-//使用赋值运算符为变量赋值
+/**
+ * 使用赋值运算符为变量赋值
+ */
 
 //创建类
 public class EqualSign {

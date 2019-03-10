@@ -1,6 +1,8 @@
 package com.soft1841.chapter1;
 
-//在类中定义多个转义字符并输出
+/**
+ * 在类中定义多个转义字符并输出
+ */
 
 public class EscapeCharacter {
     public static void main(String[] args) {
