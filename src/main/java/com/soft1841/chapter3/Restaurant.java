@@ -1,4 +1,4 @@
-package com.soft1841.chapter2;
+package com.soft1841.chapter3;
 
 
 //引入Scanner

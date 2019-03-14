@@ -1,4 +1,4 @@
-package com.soft1841.chapter1;
+package com.soft1841.chapter2;
 
 /**
  * 在类中定义多个转义字符并输出

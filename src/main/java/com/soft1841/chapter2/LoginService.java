@@ -1,4 +1,4 @@
-package com.soft1841.chapter1;
+package com.soft1841.chapter2;
 
 /**
  * 用Boolean变量记录登录用户和密码

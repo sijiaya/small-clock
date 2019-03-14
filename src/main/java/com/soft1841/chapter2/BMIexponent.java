@@ -1,4 +1,4 @@
-package com.soft1841.chapter1;
+package com.soft1841.chapter2;
 
 /**
  * 声明double型变量height记录身高，声明int型变量weight记录体重

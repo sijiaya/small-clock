@@ -1,4 +1,4 @@
-package com.soft1841.chapter1;
+package com.soft1841.chapter2;
 
 /**
  * 对用户输入的值进行比较

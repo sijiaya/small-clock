@@ -1,4 +1,4 @@
-package com.soft1841.chapter1;
+package com.soft1841.chapter2;
 
 /**
  * 使用赋值运算符为变量赋值
