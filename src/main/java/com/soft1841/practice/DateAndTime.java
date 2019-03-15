@@ -1,10 +1,4 @@
 package com.soft1841.practice;
-import cn.hutool.core.io.resource.ResourceUtil;
-import com.sun.corba.se.spi.ior.iiop.IIOPFactories;
-import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
-import sun.util.resources.th.CalendarData_th;
-
-import javax.xml.bind.SchemaOutputResolver;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
@@ -89,11 +83,16 @@ public class DateAndTime {
             }
         }
 
+
         //处理时区
-        ZoneId america = ZoneId.of("America/New-York");
+        // Date and time with timezone in Java 8
+        ZoneId america = ZoneId.of("America/New_York");
         LocalDateTime localDateAndTime = LocalDateTime.now();
-        ZonedDateTime dateAndTimeInNewYork = ZonedDateTime.of(localDateAndTime,america);
-        System.out.println("Current date and time in a particular timezone : " + dateAndTimeInNewYork);
+        ZonedDateTime dateAndTimeInNewYork = ZonedDateTime.of(localDateAndTime, america);
+        System.out.println("Current date and time in a particular timezone : " + dateAndTimeInNewYork);;
+
+
+
 
         //表示信用卡到期这类固定日期（用YearMonth）
         YearMonth currentYearMonth = YearMonth.now();
@@ -130,26 +129,25 @@ public class DateAndTime {
         System.out.printf("Date generated from String %s is %s %n",dayAfterTomorrow,formatted);
 
         //使用自定义格式化工具解析日期
-        String goodFriday = "Mar 15 2019";
+        String goodFriday = "2019.03.15";
         try {
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMM dd yyyy");
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy.MM.dd");
             LocalDate holiday = LocalDate.parse(goodFriday, formatter);
             System.out.printf("Successfully parsed String %s, date is %s%n", goodFriday, holiday);
-        }catch (DateTimeParseException ex){
+        } catch (DateTimeParseException ex) {
             System.out.printf("%s is not parsable!%n", goodFriday);
             ex.printStackTrace();
-        }
 
-        //把日期实例转换为特定的字符串
-        LocalDateTime arrivalDate = LocalDateTime.now();
-        try {
-            DateTimeFormatter format = DateTimeFormatter.ofPattern("MMM dd yyyy  hh:mm a");
-            String landing = arrivalDate.format(format);
-            System.out.printf("Arriving at : %s %n", landing);
-        }catch (DateTimeException ex){
-            System.out.printf("%s can't be formatted!%n", arrivalDate);
-            ex.printStackTrace();
+            //把日期实例转换为特定的字符串
+            LocalDateTime arrivalDate = LocalDateTime.now();
+            try {
+                DateTimeFormatter format = DateTimeFormatter.ofPattern("MMM dd yyyy  hh:mm a");
+                String landing = arrivalDate.format(format);
+                System.out.printf("Arriving at : %s %n", landing);
+            } catch (DateTimeException ex1) {
+                System.out.printf("%s can't be formatted!%n", arrivalDate);
+                ex.printStackTrace();
+            }
         }
-
     }
 }
