@@ -12,43 +12,43 @@ import java.util.Date;
  */
 
 public class DateDifferentExample {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ParseException {
         //分别定义起止时间
-        String startTime = "2019-03-17 20:31:58";
-        String stopTime = "2019-03-18 07:36:22";
-        String time2 = "2019-3-18 07:12:28";
-        //获取当前时间
-        Date date = new Date();
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        System.out.println("现在时间: " + format.format(date));
+        Date date = new Date();
+        String date1 = "2019-03-17 07:31:58";//天数
+        String date2 = "2019-03-17 07:39:58";//小时
+        String date3 = "2019-03-18 08:20:20";//分钟数
+        String date4 = "2019-03-18 08:10:10";//秒数
+        String stopTime = format.format(date);
         Date d1;
         Date d2;
         Date d3;
+        Date d4;
         long diff = 0;
-        //通过SimpleDateFormat的对象把String类型的时间对象转化成Date类型的对象
-        try{
-            d1 = format.parse(startTime);
-            d2 = format.parse(stopTime);
-            d3 = format.parse(time2);
-            //毫秒ms的差值
-            diff = date.getTime() - d1.getTime();
-            diff = date.getTime() - d2.getTime();
-            diff = date.getTime() - d3.getTime();
-        }catch (ParseException e){
-            e.printStackTrace();
-        }
+        long diff1 = 0;
+        long diff2 = 0;
+        long diff3 = 0;
+        //通过SimpleDateFormat来把String类型的时间对象转化成Date类型的对象
+        d1 = format.parse(date1);
+        d2 = format.parse(stopTime);
+        d3 = format.parse(date2);
+        d4 = format.parse(date3);
+        diff = d2.getTime()-d1.getTime();
+        diff1 = d2.getTime()-d4.getTime();
+        diff2 = d2.getTime()-d3.getTime();
+        diff3 = d2.getTime()-d4.getTime();
         //将毫秒分别换算成秒、分、小时、天
-        //long diffSeconds = diff / 1000;
-        long diffMinutes = diff / (1000 * 60);
-        long diffHours = diff / (1000 * 60 * 60);
-        long diffDays = diff / (1000 * 60 * 60 *24);
-
+        //long diffSeconds = diff1/ 1000;
+        long diffMinutes = diff3 / (1000 * 60);
+        long diffHours = diff2 / (1000 * 60 * 60);
+        long diffDays = diff / (1000 * 60 * 60 * 24);
         //输出
-        //System.out.println(startTime + " " +Math.abs(diffSeconds) + " 秒前");
-        System.out.println(startTime + " "+ Math.abs(diffMinutes) + " 分前");
-        System.out.println(stopTime +" "+ Math.abs(diffHours) + " 小时前");
-        System.out.println(time2 +" "+ Math.abs(diffDays) + " 天前");
-        System.out.println(format.format(date) +" "+" 刚刚");
-
+        System.out.println("当前时间：" +format.format(date));
+        System.out.println(format.format(date)+"  刚刚" );
+        System.out.println(date2+"  " + Math.abs(diffHours) + "小时前");
+        System.out.println(date3+"  " + Math.abs(diffMinutes) + "分前");
+        System.out.println(date1 +"  "+ Math.abs(diffDays) + "天前");
     }
+
 }
