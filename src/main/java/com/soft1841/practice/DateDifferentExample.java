@@ -12,43 +12,40 @@ import java.util.Date;
  */
 
 public class DateDifferentExample {
-    public static void main(String[] args) throws ParseException {
-        //分别定义起止时间
+    public static void main(String[] args) {
+        String[] times = {"2019-03-16 20:31:58", "2019-03-17 12:08:34", "2019-03-17 21:35:26", "2019-03-17 21:59:07"};
+        String[] results = new String[times.length];
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        Date date = new Date();
-        String date1 = "2019-03-17 07:31:58";//天数
-        String date2 = "2019-03-17 07:39:58";//小时
-        String date3 = "2019-03-18 08:20:20";//分钟数
-        String date4 = "2019-03-18 08:10:10";//秒数
-        String stopTime = format.format(date);
-        Date d1;
-        Date d2;
-        Date d3;
-        Date d4;
-        long diff = 0;
-        long diff1 = 0;
-        long diff2 = 0;
-        long diff3 = 0;
-        //通过SimpleDateFormat来把String类型的时间对象转化成Date类型的对象
-        d1 = format.parse(date1);
-        d2 = format.parse(stopTime);
-        d3 = format.parse(date2);
-        d4 = format.parse(date3);
-        diff = d2.getTime()-d1.getTime();
-        diff1 = d2.getTime()-d4.getTime();
-        diff2 = d2.getTime()-d3.getTime();
-        diff3 = d2.getTime()-d4.getTime();
-        //将毫秒分别换算成秒、分、小时、天
-        //long diffSeconds = diff1/ 1000;
-        long diffMinutes = diff3 / (1000 * 60);
-        long diffHours = diff2 / (1000 * 60 * 60);
-        long diffDays = diff / (1000 * 60 * 60 * 24);
-        //输出
-        System.out.println("当前时间：" +format.format(date));
-        System.out.println(format.format(date)+"  刚刚" );
-        System.out.println(date2+"  " + Math.abs(diffHours) + "小时前");
-        System.out.println(date3+"  " + Math.abs(diffMinutes) + "分前");
-        System.out.println(date1 +"  "+ Math.abs(diffDays) + "天前");
+        System.out.println("现在时间：" + format.format(new Date()));
+        for (int i = 0; i < times.length; i++) {
+            results[i] = timeCal(times[i]);
+            System.out.println(times[i] + "  " + results[i]);
+        }
     }
 
+    private static String timeCal(String time) {
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date d1;
+        long diff = 0;
+        try {
+            d1 = format.parse(time);
+            Date now = new Date();
+            diff = now.getTime() - d1.getTime();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        long seconds = diff / 1000;
+        long minutes = seconds / 60;
+        long hours = minutes / 60;
+        long days = hours / 24;
+        if (seconds < 60) {
+            return "刚刚";
+        } else if (minutes < 60) {
+            return minutes + "分钟前";
+        } else if (hours < 24) {
+            return hours + "小时前";
+        } else {
+            return days + "天前";
+        }
+    }
 }
