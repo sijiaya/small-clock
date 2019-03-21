@@ -11,6 +11,7 @@ public class CalendarDemo {
         int year = calendar.get(Calendar.YEAR);
         //获取月，0表示1月
         int month = calendar.get(Calendar.MONTH) + 1;
+        //获取日期、时间、分钟、秒
         int day = calendar.get(Calendar.DAY_OF_MONTH);
         int hour = calendar.get(Calendar.HOUR_OF_DAY);
         int minute = calendar.get(Calendar.MINUTE);
