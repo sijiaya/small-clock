@@ -1,6 +1,6 @@
 package com.soft1841.practice3;
 
-public class Admition {
+public class Admintion {
     public static void main(String[] args) {
         System.out.println("球员进场......");
         A a = new A();
