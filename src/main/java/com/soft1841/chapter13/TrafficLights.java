@@ -38,9 +38,9 @@ public class TrafficLights extends JFrame {
         bgLabel.setIcon(new ImageIcon(TitledBorder.class.getResource("/img/Green.png")));
         bgPanel.add(bgLabel,BorderLayout.CENTER);
 
-      TurnColor tc = new TurnColor();
-      tc.setBgLabel(bgLabel);
-      tc.start();
+        TurnColor tc = new TurnColor();
+        tc.setBgLabel(bgLabel);
+        tc.start();
 
     }
 
