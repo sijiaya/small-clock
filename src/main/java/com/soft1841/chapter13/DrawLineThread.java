@@ -26,7 +26,7 @@ public class DrawLineThread implements Runnable {
             }
             Graphics graphics = frame.getGraphics();
             graphics.setColor(colors[random.nextInt(colors.length)]);
-            graphics.drawLine(x,y,600,y);
+            graphics.drawLine(x,y,650,y);
             y +=10;
             if (y>=500){
                 y = 100;

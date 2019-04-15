@@ -7,7 +7,7 @@ public class RunnableTest extends Object implements Runnable{
     public void run() {
         while (true){
             //打印count变量
-            System.out.println(count+"  ");
+            System.out.print(count+"  ");
             if (--count==0){
                 //使count变量自减，当自减为0时，退出循环
                 break;
@@ -17,8 +17,9 @@ public class RunnableTest extends Object implements Runnable{
 
     public static void main(String[] args) {
         //创建线程类的一个对象
-        ThreadTest test = new ThreadTest();
+        RunnableTest test = new RunnableTest();
+        Thread thread = new Thread(test);
         //启动线程
-        test.start();
+        thread.start();
     }
 }
